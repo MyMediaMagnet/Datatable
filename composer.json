@@ -1,28 +1,27 @@
 {
-  "description": "This is a Laravel 5 package for the server and client side of DataTables (http://datatables.net/)",
+  "description": "This is a Laravel 6 fork of OpenSkill Datatables for the server and client side of DataTables (http://datatables.net/)",
   "keywords": ["laravel", "datatables", "ajax", "jquery", "dynatable"],
   "license": "MIT",
   "homepage": "http://github.com/OpenSkill/Datatable",
   "authors": [
     {
-      "name": "Nils Plaschke",
-      "email": "github@nilsplaschke.de",
-      "homepage": "http://nilsplaschke.de",
+      "name": "Troy Jaggard",
+      "email": "troy@developerplus.ca",
+      "homepage": "https://developerplus.ca",
       "role": "Developer"
     }
   ],
-  "name": "openskill/datatable",
+  "name": "mymediamagnet/datatable",
   "require": {
-    "php": ">=5.4.0",
-    "symfony/http-foundation": "~2.1|>=2.7.0|~3.0",
+    "php": ">=7.2",
+    "symfony/http-foundation": ">=4.2.2",
     "illuminate/support": ">=4.2.2",
     "illuminate/contracts": ">=4.2.2",
     "illuminate/config": ">=4.2.2"
   },
   "require-dev": {
     "phpunit/phpunit": "4.8.*",
-    "mockery/mockery": "0.9.*",
-    "satooshi/php-coveralls": "dev-master"
+    "mockery/mockery": "0.9.*"
   },
   "autoload": {
     "psr-4": {

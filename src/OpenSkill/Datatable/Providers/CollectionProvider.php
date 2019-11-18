@@ -3,6 +3,7 @@
 namespace OpenSkill\Datatable\Providers;
 
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use OpenSkill\Datatable\Columns\ColumnConfiguration;
 use OpenSkill\Datatable\Columns\ColumnOrder;
 use OpenSkill\Datatable\Columns\ColumnSearch;
@@ -83,7 +84,7 @@ class CollectionProvider implements Provider
         foreach ($this->columnConfiguration as $col) {
             if (!array_key_exists($col->getName(), $this->columnSearchFunction)) {
                 $this->columnSearchFunction[$col->getName()] = function ($data, ColumnSearch $search) use ($col) {
-                    if (str_contains(mb_strtolower($data[$col->getName()]), mb_strtolower($search->searchValue()))) {
+                    if (Str::contains(mb_strtolower($data[$col->getName()]), mb_strtolower($search->searchValue()))) {
                         return true;
                     }
                     return false;
@@ -254,7 +255,7 @@ class CollectionProvider implements Provider
          */
         $this->defaultGlobalSearchFunction = function ($data, $search, array $columns) {
             foreach ($columns as $column) {
-                if ($column->getSearch()->isSearchable() && str_contains(mb_strtolower($data[$column->getName()]),
+                if ($column->getSearch()->isSearchable() && Str::contains(mb_strtolower($data[$column->getName()]),
                         mb_strtolower($search))
                 ) {
                     return true;
